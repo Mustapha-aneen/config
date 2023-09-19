@@ -1,0 +1,35 @@
+{% extends 'jobs/base.html' %}
+<html>
+  <head>
+    {% block title %} edit email {% endblock %}
+    <style>
+      form{
+        display: flex;
+        flex-direction: column;
+      }
+      input{
+        height: 35px;
+      }
+      #alert{
+        color: red;
+      }
+    </style>
+  </head>
+  {% block content %}
+    {% block header %}
+      <h3>Edit Email</h3>
+    {% endblock %}
+    <form method="post" action="edit-email">
+      {% csrf_token %}
+      <label for="email">Old Email:
+        <input type="email" name="old_email" required autofocus>
+      </label>
+      <label for="confirm_main">New Email:
+        <input type="email" name="new_email" required autofocus>
+      </label>
+        <input type="submit"value="confirm">
+      </label>
+      <span id="alert">{{ exists }}</span>
+    </form>
+  {% endblock %}
+</html>

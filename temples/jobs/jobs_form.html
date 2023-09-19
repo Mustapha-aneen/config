@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1">
+    <style>
+      body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+      form{
+        height: 40%;
+        width: 80%;
+        border:royalblue solid 1px;
+        text-align: center;
+       border-radius: 10px;
+      }
+      
+      li{
+        display: none;
+      }
+      label{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        text-indent: 8%;
+        margin-bottom: -15px;
+      }
+      #firstname,#lastname,#job,#email {
+        height:35px;
+        margin-top: 15px;
+        outline: none;
+        font-size: large;
+        border: royalblue solid 1px;
+        width: 80%;
+        border-radius: 5px;
+      }
+      form > .top{
+        height: 50px;
+        width: 100%;
+        background: royalblue;
+        color: #fff;
+        display: grid;
+        border-radius: 10px 10px 15px 15px;
+        place-items: center;
+        font-family: Times New Roman;
+        font-size: large;
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.20);
+        margin-top: -5px;
+      }
+      input[type="submit"]{
+        border-radius: 10px;
+        width: 85px;
+        height: 35px;
+        margin-bottom: 5px;
+        background: transparent;
+        border:royalblue solid 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>{{ posts.title }}</h3>
+    </header>
+    
+    <form onsubmit="return auth(this);" method="post"action="job-submit" name="form">
+      <div class="top"top>
+        <span>Application Form</span>
+      </div>
+      {{ forms.as_p }}
+      {% csrf_token %}
+      <input type="submit">
+    </form>
+    
+    <script>
+      var label = document.getElementsByTagName("label");
+      var job = document.getElementById("job")
+      var firstname = document.getElementById("firstname")
+      job.value = "{{ posts.title }}"
+      
+      function auth(e){
+        e.preventDefault();
+        if(firstname.value.length < 5){
+          
+          return false
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+      <meta charset="utf-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1">
+    <style>
+      header > h3{
+        text-align: center;
+      }
+      form{
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: ;
+      }
+      label{
+        height: 100px;
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        
+      }
+      input{
+        height: 40px;
+        width: 100%;
+        margin-top: 10px;
+        font-size: large;
+      }
+      input[type="submit"] {
+        width: 20%;
+        margin-top: 20px;
+        height: 35px;
+        font-size: small;
+      }
+      #aler{
+        font-size: small;
+      }
+    </style>
+  </head>
+    {% block content %}
+<body>
+  <header>{% block header %} {% endblock %}</header>
+    
+ 
+</body>
+    {% endblock %}
+</html>

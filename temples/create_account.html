@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width,inital=scale-1">
+    <title>Create Account</title>
+    <style>
+       body{
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         align-items: center;
+         height: auto;
+         width: 100%;
+         margin: 0;
+       }
+      .welcome{
+        text-align: center;
+        font-family: Times New Roman;
+        background: rgba(0,0,0,0.50);
+        color: #fff;
+        height: 70px;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.20);
+      }
+      @media screen and (min-width:100px;){
+        form{
+          width: 10%;
+        }
+        body {
+          background: red;
+        }
+      }
+      form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 19px 10px;
+        position: relative;
+        bottom: 50px;
+        width: 90%;
+        height: 100%;
+        align-items: center;
+      }
+      label{
+        width: 100%;
+        font-size: large;
+        font-variant: small-caps;
+        margin: 10px;
+      }
+      input[type="text"],input[type="password"],input[type="email"],input[type="String"]{
+        width: 80%;
+        height: 40px;
+        border-radius: 10px;
+        border:royalblue solid 1px;
+        font-size: large;
+        
+      }
+      input[type="checkbook"]{
+        width: 2px;
+        height: 2px;
+        padding: 1px;
+      }
+      input[type="submit"]{
+        width: 40%;
+        height: 39px;
+        background: transparent;
+        display: block;
+        border:royalblue solid 1px;
+        border-radius: 10px;
+        font-size: large;
+        
+      }
+      input[type="submit"]:hover{
+        background: royalblue;
+        color: #fff;
+        
+      }
+      form > span{
+        font-variant: small-caps;
+        font-size: large;
+        position:relative;
+        bottom: 20px;
+      }
+      .pc{
+        color: red;
+        font-size: small;
+        font-variant: none;
+        margin-top:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="welcome">
+    </header>
+    <form method="post"onsubmit="confirm(this);">
+        <span>welcome to Arewa Coders </span>
+        {% csrf_token %} 
+        {{ forms.as_p }}
+        <span class="pc"></span>
+      <label for="checkbook">show password 
+        <input onclick="change(this);" type="checkbox">
+      </label>
+      <label for="submit">
+        <input  type="submit"value="submit"id="submit">
+    </form>
+    <script>
+      var password1 = document.querySelector(".password1")
+      var password2 = document.querySelector(".password2")
+      var submit = document.querySelector("#submit")
+      var msg = document.querySelector(".pc")
+      function change(check){
+        if(password1.type == "password" && password2.type == "password"){
+          password1.type = "text"
+          password2.type = "text"
+        }
+        else{
+          password1.type = "password"
+          password2.type = "password"
+          
+        }
+      }
+      function confirm(inf){
+        
+      }
+    </script>
+  </body>
+</html>

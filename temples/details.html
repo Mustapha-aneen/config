@@ -1,0 +1,42 @@
+
+{% load static %}
+<head>
+  
+  <title>{{post.title}}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"content="width=device-width,initial-scale=1">
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    img{
+      height: 100px;
+      width: 100px;
+      position:absolute;
+      right: 50%;
+      border-radius: 100px;
+      margin-top: 20%;
+      transform: translateX(50%);
+    }
+    #post_body{
+      margin-top: 40%;
+      font-size:large;
+      line-height: 35px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <center>
+    <h2>
+    {{post.title}}
+      
+    </h2>
+  </center>
+  </header>
+  <img id="img"src="{{ post.image.url }}">
+ 
+  <span id="post_body">{{ post.body }}</span>
+</body>

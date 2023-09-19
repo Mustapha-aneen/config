@@ -1,0 +1,142 @@
+
+<html>
+<head>
+<title>authentication</title>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1">
+<link rel="stylesheet"href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+@media screen and (max-width:600px;){
+    form{
+     height:30%;
+}
+}
+  body{
+    display:flex;
+    place-items: center;
+    height: 100vh;
+    align-items:center;
+    justify-content:;
+    flex-direction:column;
+    -webkit-user-select:none;
+}
+  input{
+    width:85%;
+    position:relative;
+    left:5%;
+    height:40px;
+    border-radius:10px;
+    border:royalblue solid 1px;
+    text-indent:10px;
+    margin-top: ;
+    outline: none;
+}
+  input[type='submit']{
+    height:30px;
+    width:40%;
+    background:royalblue;
+    border:none;
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    margin-top:10%;
+    color:#fff;
+    text-indent:0px;
+    border-radius:10px;  
+}
+  form{
+    display:block;
+    width:90%;
+    height:60%;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+    box-shadow:0px 0px 20px rgba(0,0,0,0.20);
+    border-radius:10px;
+    margin-top:30px;
+    
+   
+}
+  
+  .more{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width:100%;
+    margin-top:25%;
+}
+  .more > a{
+    text-decoration:none;
+    color:royalblue;
+    font-family:times new Roman;
+    font-size:small;
+}
+   label{
+    position:relative;
+    left:5%;
+    height: 0px;
+    color:royalblue;
+    font-variant:small-caps;
+    margin-top: 20%;
+    display: inline;
+    
+    flex-direction: column;
+    justify-content: space-around;
+}
+#error{
+  color: red;
+  font-size: small;
+  position: relative;
+  bottom: 1px;
+  left: 50%;
+  
+}
+#top-login{
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  font-size: xx-large;
+  border:#000 solid 1px;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  display: grid;
+  place-items: center;
+}
+</style>
+</head>
+ <body>
+ <div></div>
+<form onsubmit="return validation()"name="form"method="post"action="{% url 'pages:login'  %}">
+  <span id="top-login" class="material-icons">lock</span>
+  {% csrf_token %} 
+  <p style="font-variant:small-caps;text-align:center;">login your account here</p>
+  
+   {{ forms }}
+   <span id="error" style="visibility:{{ check }};">password incorrect</span>
+  <input type="submit"value="login">
+   <div class="more">
+     <a href="forgotpassword">forgot password</a>
+     <a href="create-account">Create Account</a>
+   </div>
+   <p id="password">{{usr}}</p>
+   <p id="username">{{paw}}</p>
+</form>
+  <script>
+     
+   var psw = document.querySelector("#password").innerText;
+   var usr = document.querySelector("#username").innerText;
+   
+   var error = document.querySelector("#error")
+   var input = document.querySelectorAll("input")
+  
+   function validation(inp){
+     alert(document.cookie)
+       document.cookie = `username ${usr}`
+     if(usr.length != 0){
+       
+     }
+   }
+  </script>
+</body>
+</html>

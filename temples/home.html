@@ -1,0 +1,123 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"href="{% static 'css/home.css' %}">
+    <style>
+      body{
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- <nav>
+        <li><a href="About">About</a></li>
+        <li><a href="Contact">Contact</a></li>
+        <li><a href="feedback">Feedback</a></li>
+        <li><a href="About">document</a></li>
+      </nav> -->
+    </header>
+    <div class="light_box">
+      <div class="nav">
+        <i style="color:#fff;font_size:x-large;font-variant:small-caps;">profile</i>
+        <img src="{% static 'img/profile_ico.png' %}"alt=""id="profile_img">
+        <span class="username"></span>
+        
+        <a style="display:{{ log_dis }};" href="login">login your Account</a>
+        <div style="display:{{display}};"class="profile_contents">
+          <div class="edit">
+            <img src="{% static 'icon/edit_editor.png' %}">
+            <span>Edit Profile</span>
+          </div>
+          <div class="bookmark">
+            <img src="{% static 'icon/book.png' %}">
+            <span>bookmarks</span>
+          </div>
+          <div class="premium">
+            <img src="{% static 'icon/premium.png'  %}">
+            <span>premium Account</span>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="top-web">
+        <button id="menu"class="material-icons"onclick="navigation(this)">menu</button>
+        <span>Arewa Coders</span>
+        <img src="{% static 'admin/img/search.svg' %}">
+      </div>
+      <div class="courses">
+        <span class="top-des">courses</span>
+	{% for item in items %}
+	           <div class="courses-list">
+	          
+	             <img src="{{ item.image.url }}"id="img">
+               <li><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+             </div>
+             
+
+	{% endfor %}
+        {% include "pagination.html" with page=items %}
+        <a href="jobs">jobs</a> 
+      </div>
+   
+    <div class="business">
+      <span style=";">start online Business</span>
+    </div>
+    <span style="text-align:center;">learn how to earn money online
+    <br>and improve your Business skills</span>
+    <div class="hacking">
+      <span style="color:#fff;font-size:x-large;">learn Ethical hacking</span>
+    </div>
+    <span style="text-align:center;">learn Ethical hacking 
+    <br>for education purpose only </span>
+    <main></main>
+    <footer>
+      <div class="languages">
+        <span>Courses To learn</span>
+        <li><a href="languages">python</a></li>
+        <li><a href="languages">JavaScript</a></li>
+        <li><a href="languages">Java</a></li>
+        <li><a href="languages">php</a></li>
+        <li><a href="languages">kotlin</a></li>
+      </div>
+      <div class="social">
+        <span>Contact Us</span>
+        <li><a href="Facebook">Facebook</a></li>
+        <li><a href="Facebook">Instagram</a></li>
+        <li><a href="Facebook">Twitter</a></li>
+        <li><a href="Facebook">github</a></li>
+        <li><a href="Facebook">Gmail</a></li>
+      </div>
+    </footer>
+    <span class="copy"copy>copyright© 2023       design by Arewa Coders</span>
+   <script>
+     window.onload = useraction()
+     
+     function useraction(){
+       user = document.querySelector(".username")
+       arr = document.cookie
+       user.innerText = arr.split("=")[0]
+     }
+     var nav_box = document.querySelector(".light_box");
+     var menu = document.getElementById("menu")
+     var Courses = document.querySelector(".Courses")
+ 
+     function navigation(btn){
+       if(btn.innerText == "menu" ){
+         btn.innerText = "close"
+         nav_box.classList.toggle("show")
+         Courses.style.visibility = "hidden"
+       }
+       else{
+         Courses.style.visibility = "visible"
+         nav_box.classList.toggle("show")
+          
+        btn.innerText = "menu"
+       }
+     }
+   </script>
+  </body>
+</html>

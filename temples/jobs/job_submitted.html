@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'jobs/base.html' %}
+<html>
+  <head>
+    {% block title %} job submitted {% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1">
+  </head>
+    {% block content %}
+  <body>
+    {% block header %}
+      <h3>Job submitted</h3>
+    {% endblock %}
+    <div class="content">
+      
+      <span>hello {{ firstname }} congratulation you job has submitted to {{ posts.author }}
+        at {{ posts.publish }} you receive response via your email {{ email }} after 
+        we Satisfaction your choice {{ job }} <a href="edit-email">edit email</a>
+      </span>
+    </div>
+  </body>
+  {% endblock %}
+</html>

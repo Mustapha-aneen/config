@@ -1,0 +1,105 @@
+
+<html>
+<head>
+<title>authentication</title>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1">
+<style>
+@media screen and (max-width:600px;){
+    form{
+     height:30%;
+}
+}
+  body{
+    background-image:cyan;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    flex-direction:column;
+    -webkit-user-select:none;
+}
+  input{
+    width:90%;
+    position:relative;
+    left:5%;
+    height:40px;
+    border-radius:10px;
+    border:royalblue solid 1px;
+    text-indent:10px;
+}
+  input[type='submit']{
+    height:30px;
+    width:40%;
+    background:royalblue;
+    border:none;
+    position:relative;
+    left:0%;
+    color:#fff;
+    text-indent:0px;
+    border-radius:10px;  
+}
+  form{
+    display:flex;
+    width:90%;
+    height:80%;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+    box-shadow:0px 0px 20px rgba(0,0,0,0.20);
+    border-radius:10px;
+    border:rgba(0,0,0,0.40) solid 1px;
+}
+  input::placeholder{
+    color:royalblue;
+    font-size:x-small;
+   
+    
+}
+  .more{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    width:100%;
+}
+  .more > a{
+    text-decoration:none;
+    color:royalblue;
+    font-family:times new Roman;
+    font-size:small;
+}
+   label{
+    position:relative;
+    left:5%;
+    color:royalblue;
+    font-variant:small-caps;
+}
+</style>
+</head>
+ <body>
+ 
+<form name="form"method="post"action="{% url 'login' %}">
+  {% csrf_token %} 
+  <p style="font-variant:small-caps;">login your account here</p>
+   {{ forms.as_p }}
+   <span>{{ check }}</span>
+  <input type="submit"value="login">
+   <div class="more">
+     <a href="forgotpassword">forgot password</a>
+     <a href="create-account">Create Account</a>
+   </div>
+</form>
+
+  <script>
+     var form = document.querySelectorAll("input");
+     form.forEach((input)=>{
+	if(input.value == " "){
+	input.type = "email"
+     }
+       else if(input.value == ""){
+	input.type = "password"
+}
+  
+})
+  </script>
+</body>
+</html>

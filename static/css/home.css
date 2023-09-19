@@ -1,0 +1,270 @@
+body{
+  margin: 0;
+  display:flex;
+  flex-direction: column;
+  height: 100vh;
+  scroll-behavior: smooth;
+  background-color: ;
+}
+header > nav{
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  background: royalblue;
+  height: 30px;
+  align-items: center;
+  font-variant: small-caps;
+ 
+}
+header > nav > li > a{
+  text-decoration: none;
+  color: #fff;
+  border-right: #000 solid 1px;
+  font-size: small;
+}
+header > nav > li{
+  
+  
+}
+footer{
+  width: 100%;
+  height: 300px;
+  background: grey;
+  display: flex;
+  color: #fff;
+  justify-content: space-around;
+}
+footer > .languages{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+footer > .social{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+footer > .social > li > a{
+  
+  text-decoration: none;
+  color: #fff;
+  font-family: Times New Roman;
+}
+footer > .languages > li > a{
+  text-decoration: none;
+  color: #fff;
+  font-family: Times New Roman;
+}
+footer > .languages > li{
+  
+}
+main{
+  flex: 1  auto;
+  
+}
+.top-web{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  height: 50px;
+  position: fixed;
+  background: #fff;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.25);
+}
+.top-web > a{
+  text-decoration: none;
+  color:royalblue;
+  background: transparent;
+  border:royalblue solid 1px;
+  width: 69px;
+  text-indent: 0;
+  text-align: center;
+  border-radius: 5px;
+  font-variant: small-caps;
+  font-family: Times New Roman;
+}
+.top-web > span{
+  font-variant: small-caps;
+  font-size: large;
+}
+.top-web > button{
+  background: transparent;
+  border: none;
+  transition-duration: 2s;
+}
+.top-des{
+  color: royalblue;
+  text-indent: 15px;
+  font-family:Tahoma;
+}
+.courses{
+  text-indent: 15px;
+  line-height: 30px;
+  font-family: Times New Roman;
+  
+  transform: translateY(50px);
+}
+.courses > .courses-list > li{
+  list-style-type: none;
+  margin: 0px;
+}
+
+.courses > .courses-list {
+  background: #fff;
+}
+
+.courses > .courses-list > li > a{
+  text-decoration: none;
+  color: royalblue;
+  font-family: 'poppins' Sans-Serif;
+  margin: 10px 0px;
+}
+#more{
+  display: none;
+}
+#more > li > a{
+  text-decoration: none;
+  color: royalblue;
+}
+#more > li{
+  list-style-type: decimal;
+}
+#more:target{
+  display: block;
+  text-decoration: none;
+}
+.business{
+  width:100%;
+  height:100px;
+  background-image: url('https://www.youngisthan.in/wp-content/uploads/2015/10/online-business.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color:royalblue;
+  margin-top: 70px;
+  background: #fff;
+}
+.business > span{
+  font-family: Times New Roman;
+  font-size: x-large;
+  color: #fff;
+}
+.courses > .courses-list{
+  width: 80%;
+  height: 50px;
+  text-overflow: ellipsis;
+  white-space: ;
+  overflow: hidden;
+  border-radius: 10px;
+  background: ;
+  display: flex;
+  justify-content: ;
+  align-items: center;
+  text-align:left;
+  margin: 10px;
+  font-family:Sans-Serif;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.10);
+  border: rgba(0,0,0,0.20) solid 1px;
+}
+.courses > .courses-list > #img{
+  border-radius: 10px 0px 0px 10px;
+  height: 50px;
+  width: 45px;
+}
+.light_box{
+  position: fixed;
+  height:100vh;
+  overflow: hidden;
+  width: 100%;
+  background: rgba(0,0,0,0.40);
+  transition-duration: 0.2s;
+  top:45px;
+  left: -500px;
+  visibility: hidden;
+  
+}
+.light_box > .nav{
+  height: 100%;
+  width: 100%;
+  background:royalblue;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  
+  align-items: center;
+}
+.light_box > .nav > .profile_contents{
+  margin-top: 20px;
+  border-top: #fff solid 2px;
+  width: 100%;
+  color: #fff;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.30);
+}
+.light_box > .nav > a{
+  text-decoration: none;
+  color: #fff;fff
+  width: 80px;
+  height: 30px;
+  border:#fff solid 1px;
+  margin-top: 30px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+.light_box > .nav > .username{
+  margin-top: 10px;
+ 
+  
+}
+.light_box > .nav > .edit , .premium, .bookmark,.edit{
+  display: flex;
+  width:70%;
+  height: auto;
+  align-items: center;
+  justify-content: ;
+  padding-left: 30px;
+  margin-top: 10px;
+  text-align: center;
+  border:rgba(0,0,0,0.50) solid 2px;
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.30);
+  border-radius: 10px;
+}
+
+.premium > img{
+  height: 40px;
+  width: 40px;
+}
+
+.username {
+  color: #fff;
+}
+.show{
+  left:0;
+  visibility: visible;
+}
+#profile_img{
+  height: 90px;
+  width: 90px;
+  border-radius: 100px;
+  border:#000 solid 3px;
+  margin-top:0px;
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.25);
+}
+.hacking {
+  height: 200px;
+  width: 100%;
+  background-image: url('/static/img/hacking.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 15px 0px;
+}
+.hacking > span{
+  font-family: Sans-Serif;
+}

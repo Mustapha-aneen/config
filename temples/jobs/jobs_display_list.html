@@ -1,0 +1,75 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1">
+    <style>
+      body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h3{
+        text-align: center;
+      }
+      .job{
+        height: 70px;
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.30);
+        display: flex;
+        flex-direction: column;
+        margin-top: 15PX;
+        
+        
+      }
+      #link{
+        text-indent: 15px;
+        text-decoration: none;
+        margin-top: 10px;
+      }
+      .dis,.bottom{;
+        font-size: x-small;
+        text-indent: 15px;
+        margin-top: 3px;
+      }
+      #next_page,#previous_page{
+        text-decoration: none;
+        color: royalblue;
+      }
+      .pagination{
+        display: flex;
+        width:70%;
+        margin-top: 10px;
+        justify-content: space-around;
+        
+        
+      }
+      .bottom{
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h3>Available jobs</h3>
+    </header>
+    {% for post in posts %}
+      <div class="job">
+        <a id="link" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        <div class="dis">
+          <span>Posted by:</span>
+          <span>{{ post.author }}</span>
+        </div>
+        <div class="bottom">
+          <span>Date:</span>
+          <span>{{ post.publish }}</span>
+          {% with post.comments as size %}
+          <a href="{% url 'jobs:job_comment_page' post.slug %}">comments {{ size.count }}</a>
+          {% endwith %}
+        </div>
+      </div>
+   {% endfor %}
+   {% include 'jobs/pagination.html' with page=posts %}
+  </body>
+</html>
